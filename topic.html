@@ -1,0 +1,23 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="masthead-heading text-uppercase text-info">Topic: {{ topic.text }}</h2>
+
+    <h3 class="masthead-heading text-uppercase text-warning">Entries:</h3>
+    <ul>
+        {% for entry in entries %}
+        <li>
+            <h4 class="masthead-heading text-uppercase text-light"> {{ entry.date_added|date:"M d, Y H:i" }}</h4>
+            <h5 class="masthead-heading text-uppercase text-light">{{ entry.text|linebreaks }}</h5>
+            
+
+        </li>
+        {% empty %}
+        <li>There are no entries for this topic yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}
