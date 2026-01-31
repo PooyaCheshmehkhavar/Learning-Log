@@ -1,0 +1,6 @@
+db.sqlite3
+venv/
+learning_logs/__pycache__
+learning_logs/migrations
+learning_logs/ur
+accounts/___pycache__
