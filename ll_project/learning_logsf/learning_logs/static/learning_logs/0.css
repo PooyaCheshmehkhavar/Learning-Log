@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    color: blue;
+}
+p{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+a{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: blue;
+    text-decoration: none;
+}
+a + a{
+    margin-left: 80px;
+}
+b{
+    text-align: center;
+}

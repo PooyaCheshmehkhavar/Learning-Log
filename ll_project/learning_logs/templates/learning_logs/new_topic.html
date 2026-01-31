@@ -1,0 +1,72 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<style>
+  .add-topic-form{
+    max-width: 400px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    }
+
+  .add-topic-form div{
+    margin-bottom: 18px;
+    }
+
+  .add-topic-form label{
+    display: block;
+    color: #e0e0e0;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 16px;
+    }
+
+  .add-topic-form input[type="text"],
+  .add-topic-form input[type="password"],
+  .add-topic-form textarea{
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background-color: #f0f4ff;
+    color: #333;
+    transition: box-shadow 0.3s ease;
+    }
+
+  .add-topic-form input[type="text"]:focus,
+  .add-topic-form input[type="password"]:focus,
+  .add-topic-form textarea:focus{
+    box-shadow: 0 0 8px #4a90e2;
+    }
+
+  .add-topic-form button[name="submit"]{
+    width: 100%;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    }
+
+  .add-topic-form button[name="submit"]:hover{
+    background-color: #357ABD;
+    }
+</style>
+
+<form action="{% url 'learning_logs:new_topic' %}" method="post" class="add-topic-form">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name="submit">Add topic</button>
+    </form>
+
+{% endblock content %}
