@@ -4,3 +4,4 @@ learning_logs/__pycache__
 learning_logs/migrations
 learning_logs/ur
 accounts/___pycache__
+.DS_Store
